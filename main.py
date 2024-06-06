@@ -1,10 +1,12 @@
 # import your_ml_model  # Replace with your machine learning model import
 from flask import Flask, render_template, request
+import numpy as np
+from tensorflow.keras.models import load_model
 
 app = Flask(__name__)
 
 # Load your pre-trained machine learning model here
-# model = your_ml_model.load_model()  # Replace with your model loading logic
+model = load_model('tiny_200.h5')
 
 @app.route("/")
 def index():

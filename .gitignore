@@ -4,3 +4,4 @@
 *.pyc
 *.replit
 *.txt
+.venv/*
