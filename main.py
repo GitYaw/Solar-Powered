@@ -11,6 +11,10 @@ model = load_model('tiny_200.h5')
 def index():
     return render_template("index.html")
 
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
 @app.route("/predict", methods=["POST"])
 def predict():
     if request.method == "POST":
@@ -36,7 +40,7 @@ def predict():
             prediction = model.predict(input_data)
 
             # Format the prediction for display
-            predicted_whProduced = prediction[0][0]
+            predicted_whProduced = round(prediction[0][0], 2)
 
             return render_template("result.html", prediction=predicted_whProduced)
         except Exception as e:
