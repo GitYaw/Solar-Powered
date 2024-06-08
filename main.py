@@ -4,7 +4,7 @@ from tensorflow.keras.models import load_model
 
 app = Flask(__name__)
 
-# Load your pre-trained machine learning model
+# Load pre-trained machine learning model
 model = load_model('tiny_200.h5')
 
 @app.route("/")
@@ -32,7 +32,7 @@ def predict():
             input_data = np.array([[hour, cloudcover, dew, humidity, precip, precipprob,
                                     solarenergy, solarradiation, sunelevation, temp, uvindex]])
 
-            # Make prediction using your model
+            # Make prediction using model
             prediction = model.predict(input_data)
 
             # Format the prediction for display
