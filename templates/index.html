@@ -2,45 +2,64 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <title>Solar Energy Prediction</title>
 </head>
 <body>
-    <h1>Solar Energy Prediction</h1>
-    <form method="POST" action="/predict">
-        <label for="hour">Hour of the Day (0-23):</label>
-        <input type="number" min="0" max="23" name="hour" id="hour" required><br><br>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Solar Energy Prediction</h1>
+        <form method="POST" action="/predict">
+            <div class="form-group">
+                <label for="hour">Hour of the Day:</label>
+                <input type="number" step="1" class="form-control" name="hour" id="hour" min="0" max="23" required>
+            </div>
+            <div class="form-group">
+                <label for="cloudcover">Cloud Cover (%):</label>
+                <input type="number" step="0.1" class="form-control" name="cloudcover" id="cloudcover" required>
+            </div>
+            <div class="form-group">
+                <label for="dew">Dew Point (°F):</label>
+                <input type="number" step="0.1" class="form-control" name="dew" id="dew" required>
+            </div>
+            <div class="form-group">
+                <label for="humidity">Humidity (%):</label>
+                <input type="number" step="0.01" class="form-control" name="humidity" id="humidity" required>
+            </div>
+            <div class="form-group">
+                <label for="precip">Precipitation (mm):</label>
+                <input type="number" step="0.1" class="form-control" name="precip" id="precip" required>
+            </div>
+            <div class="form-group">
+                <label for="precipprob">Probability of Precipitation (%):</label>
+                <input type="number" step="0.1" class="form-control" name="precipprob" id="precipprob" required>
+            </div>
+            <div class="form-group">
+                <label for="solarenergy">Solar Energy (kWh/m²):</label>
+                <input type="number" step="0.1" class="form-control" name="solarenergy" id="solarenergy" required>
+            </div>
+            <div class="form-group">
+                <label for="solarradiation">Solar Radiation (W/m²):</label>
+                <input type="number" step="0.1" class="form-control" name="solarradiation" id="solarradiation" required>
+            </div>
+            <div class="form-group">
+                <label for="sunelevation">Sun Elevation (°):</label>
+                <input type="number" step="0.1" class="form-control" name="sunelevation" id="sunelevation" required>
+            </div>
+            <div class="form-group">
+                <label for="temp">Temperature (°C):</label>
+                <input type="number" step="0.1" class="form-control" name="temp" id="temp" required>
+            </div>
+            <div class="form-group">
+                <label for="uvindex">UV Index:</label>
+                <input type="number" step="0.1" class="form-control" name="uvindex" id="uvindex" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Predict</button>
+        </form>
+    </div>
 
-        <label for="cloudcover">Cloud Cover (%):</label>
-        <input type="number" step="0.1" name="cloudcover" id="cloudcover" required><br><br>
-
-        <label for="dew">Dew Point (°F):</label>
-        <input type="number" step="0.1" name="dew" id="dew" required><br><br>
-
-        <label for="humidity">Humidity (%):</label>
-        <input type="number" step="0.01" name="humidity" id="humidity" required><br><br>
-
-        <label for="precip">Precipitation (mm):</label>
-        <input type="number" step="0.1" name="precip" id="precip" required><br><br>
-
-        <label for="precipprob">Probability of Precipitation (%):</label>
-        <input type="number" step="0.1" name="precipprob" id="precipprob" required><br><br>
-
-        <label for="solarenergy">Solar Energy (kWh/m²):</label>
-        <input type="number" step="0.1" name="solarenergy" id="solarenergy" required><br><br>
-
-        <label for="solarradiation">Solar Radiation (W/m²):</label>
-        <input type="number" step="0.1" name="solarradiation" id="solarradiation" required><br><br>
-
-        <label for="sunelevation">Sun Elevation (°):</label>
-        <input type="number" step="0.1" name="sunelevation" id="sunelevation" required><br><br>
-
-        <label for="temp">Temperature (°C):</label>
-        <input type="number" step="0.1" name="temp" id="temp" required><br><br>
-
-        <label for="uvindex">UV Index:</label>
-        <input type="number" step="0.1" name="uvindex" id="uvindex" required><br><br>
-
-        <button type="submit">Predict</button>
-    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
