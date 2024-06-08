@@ -16,7 +16,7 @@ def predict():
     if request.method == "POST":
         try:
             # Get user input from the form
-            time = float(request.form.get("time"))
+            hour = float(request.form.get("hour"))
             cloudcover = float(request.form.get("cloudcover"))
             dew = float(request.form.get("dew"))
             humidity = float(request.form.get("humidity"))
@@ -29,7 +29,7 @@ def predict():
             uvindex = float(request.form.get("uvindex"))
 
             # Create an array with the input data
-            input_data = np.array([[time, cloudcover, dew, humidity, precip, precipprob,
+            input_data = np.array([[hour, cloudcover, dew, humidity, precip, precipprob,
                                     solarenergy, solarradiation, sunelevation, temp, uvindex]])
 
             # Make prediction using your model
